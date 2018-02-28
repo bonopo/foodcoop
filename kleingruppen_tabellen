@@ -1,0 +1,15 @@
+# aktiven tabelle ###
+pfad <- "C:/Users/Menke/Documents/foodcoop/"
+aktive <- read.csv2(paste0(pfad, "aktive.csv"), na.strings = 0)
+head(aktive)
+names <- colnames(aktive)
+require(dplyr)
+
+filter(aktive, aktive$Baugruppe == 1)
+aktive %>% filter(Baugruppe==1)
+names <- as.list(names)
+
+
+for (i in 4:length(aktive)){
+  write.table(aktive %>% filter(aktive[,i] ==1), file=paste0(pfad, names[i],".csv"), row.names = FALSE, sep=";")
+}
