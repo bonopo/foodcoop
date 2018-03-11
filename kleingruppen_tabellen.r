@@ -5,6 +5,7 @@ head(aktive)
 names <- colnames(aktive)
 require(dplyr)
 #test
+#and another one
 filter(aktive, aktive$Baugruppe == 1)
 aktive %>% filter(Baugruppe==1)
 names <- as.list(names)
